@@ -7,6 +7,7 @@
 //
 
 #import "FirstViewController.h"
+#import "SecondViewController.h"
 
 @interface FirstViewController ()
 
@@ -24,6 +25,24 @@
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (IBAction)launchBtn:(id)sender {
+    
+    // Retrieve UITabBarController
+    UITabBarController *tabBarController = (UITabBarController *)[[[UIApplication sharedApplication] delegate] window].rootViewController;
+    
+    // Get ViewControllers array
+    NSArray *viewControllers = tabBarController.viewControllers;
+    
+    // Cast the ViewController you are interested and push the image when unselected
+    ((SecondViewController*)[viewControllers objectAtIndex:1]).tabBarItem.image = [[UIImage imageNamed:@"camera"] imageWithRenderingMode:UIImageRenderingModeAutomatic];
+    
+    // Cast the ViewController you are interested and push the image when selected
+    ((SecondViewController*)[viewControllers objectAtIndex:1]).tabBarItem.selectedImage = [[UIImage imageNamed:@"camera"] imageWithRenderingMode:UIImageRenderingModeAutomatic];
+    
+    // You can use this method to push the ViewController, too.
+    //[tabBarController setSelectedIndex:1];
 }
 
 @end
