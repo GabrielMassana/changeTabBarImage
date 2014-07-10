@@ -52,10 +52,10 @@
     
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, 0.3 * NSEC_PER_SEC), dispatch_get_main_queue(), ^{
         // Cast the ViewController you are interested and push the image when unselected
-        viewControllers.tabBarItem.image = [[UIImage imageNamed:@""] imageWithRenderingMode:UIImageRenderingModeAutomatic];
+        viewControllers.tabBarItem.image = nil;
         
         // Cast the ViewController you are interested and push the image when selected
-        viewControllers.tabBarItem.selectedImage = [[UIImage imageNamed:@""] imageWithRenderingMode:UIImageRenderingModeAutomatic];
+        viewControllers.tabBarItem.selectedImage = nil;
         
         dispatch_after(dispatch_time(DISPATCH_TIME_NOW, 0.3 * NSEC_PER_SEC), dispatch_get_main_queue(), ^{
             // Cast the ViewController you are interested and push the image when unselected
